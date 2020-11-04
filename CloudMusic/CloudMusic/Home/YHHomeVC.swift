@@ -14,6 +14,8 @@ class YHHomeVC: UIViewController {
         super.viewDidLoad()
         self.title = "首页"
         self.title = "开发title"
+        self.title = "测试2"
+
     }
     
 
