@@ -13,7 +13,7 @@ class YHHomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "首页"
-        self.title = "测试2"
+        self.title = "发布分支测试"
     }
     
 
