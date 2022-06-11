@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		46BC3D964550D181C586E701 /* Pods_CloudMusicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3802F258DD9FD7163364516E /* Pods_CloudMusicTests.framework */; };
+		65454D68283A91790088ACD1 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65454D67283A91790088ACD1 /* Service.swift */; };
 		654E9C3E252EE93E0088C2D7 /* UIButtonLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654E9C3D252EE93E0088C2D7 /* UIButtonLayoutExtension.swift */; };
 		654E9C40252F09870088C2D7 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654E9C3F252F09870088C2D7 /* UITextFieldExtension.swift */; };
 		654E9C42252F2A840088C2D7 /* YHDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654E9C41252F2A840088C2D7 /* YHDevice.swift */; };
@@ -69,6 +70,7 @@
 		154DE38E4B36784281A05264 /* Pods-CloudMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudMusic.release.xcconfig"; path = "Target Support Files/Pods-CloudMusic/Pods-CloudMusic.release.xcconfig"; sourceTree = "<group>"; };
 		271CC165E9FB933FA63F2A34 /* Pods-CloudMusicUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudMusicUITests.debug.xcconfig"; path = "Target Support Files/Pods-CloudMusicUITests/Pods-CloudMusicUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3802F258DD9FD7163364516E /* Pods_CloudMusicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudMusicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65454D67283A91790088ACD1 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		654E9C3D252EE93E0088C2D7 /* UIButtonLayoutExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonLayoutExtension.swift; sourceTree = "<group>"; };
 		654E9C3F252F09870088C2D7 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		654E9C41252F2A840088C2D7 /* YHDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YHDevice.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			children = (
 				654E9C44252F463D0088C2D7 /* NetWorkPlugin.swift */,
 				654E9C46252F46580088C2D7 /* API.swift */,
+				65454D67283A91790088ACD1 /* Service.swift */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				65CC3F4A251E38BA0090A114 /* AppDelegate.swift in Sources */,
 				65B0D07F252969D100277521 /* UIColorExtension.swift in Sources */,
 				65CC3F4C251E38BA0090A114 /* SceneDelegate.swift in Sources */,
+				65454D68283A91790088ACD1 /* Service.swift in Sources */,
 				65B0D07D2529688B00277521 /* Constant.swift in Sources */,
 				654E9C47252F46580088C2D7 /* API.swift in Sources */,
 				659FA5672521AFA000B2EB54 /* YHNaviController.swift in Sources */,

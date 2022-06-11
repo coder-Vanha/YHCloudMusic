@@ -8,12 +8,14 @@
 
 import UIKit
 
+import Moya
+
 class YHRegisterVC: YHBaseVC {
     
     // 昵称
     lazy var tfNickname : UITextField = {
         let tfNickname = UITextField()
-       // userNameTF.backgroundColor = .green
+        // userNameTF.backgroundColor = .green
         tfNickname.translatesAutoresizingMaskIntoConstraints = false
         tfNickname.placeholder = "请输入昵称（2~15位）"
         tfNickname.showLeftIcon(name: "LoginItemPhone")
@@ -24,7 +26,7 @@ class YHRegisterVC: YHBaseVC {
     // 手机号
     lazy var tfPhone : UITextField = {
         let tfPhone = UITextField()
-      //  passWordTF.backgroundColor = .red
+        //  passWordTF.backgroundColor = .red
         tfPhone.translatesAutoresizingMaskIntoConstraints = false
         tfPhone.placeholder = "请输入手机号"
         tfPhone.showLeftIcon(name: "LoginItemPhone")
@@ -36,7 +38,7 @@ class YHRegisterVC: YHBaseVC {
     // 邮箱
     lazy var tfEmail : UITextField = {
         let tfEmail = UITextField()
-      //  passWordTF.backgroundColor = .red
+        //  passWordTF.backgroundColor = .red
         tfEmail.translatesAutoresizingMaskIntoConstraints = false
         tfEmail.placeholder = "请输入邮箱"
         tfEmail.showLeftIcon(name: "LoginItemPhone")
@@ -48,7 +50,7 @@ class YHRegisterVC: YHBaseVC {
     // 密码
     lazy var tfPassword : UITextField = {
         let tfPassword = UITextField()
-      //  passWordTF.backgroundColor = .red
+        //  passWordTF.backgroundColor = .red
         tfPassword.translatesAutoresizingMaskIntoConstraints = false
         tfPassword.placeholder = "请设置密码（6~15位）"
         tfPassword.showLeftIcon(name: "LoginItemPhone")
@@ -60,7 +62,7 @@ class YHRegisterVC: YHBaseVC {
     // 确认密码
     lazy var tfConfirmPassword : UITextField = {
         let tfConfirmPassword = UITextField()
-      //  passWordTF.backgroundColor = .red
+        //  passWordTF.backgroundColor = .red
         tfConfirmPassword.translatesAutoresizingMaskIntoConstraints = false
         tfConfirmPassword.placeholder = "请确认密码"
         tfConfirmPassword.showLeftIcon(name: "LoginItemPhone")
@@ -81,7 +83,7 @@ class YHRegisterVC: YHBaseVC {
         
         return btRegister
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -137,8 +139,24 @@ class YHRegisterVC: YHBaseVC {
     
     @objc func registerBtnClicked(_:UIButton) {
         
+        let provider = MoyaProvider<Service>()
+        
+        provider.request(.sheets) { result in
+            switch result {
+            case let .success(response):
+                let data = response.data
+               // let code = response.statusCode
+                
+                let dataString = String(data: data, encoding: .utf8)
+                
+                print("🍺 success:\(String(describing: dataString))")
+                
+                
+            case let .failure(error):
+                print("❌ failure:\(error)")
+            }
+        }
     }
-    
     
     /*
      // MARK: - Navigation
