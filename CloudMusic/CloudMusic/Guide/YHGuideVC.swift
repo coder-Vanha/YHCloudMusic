@@ -114,7 +114,7 @@ class YHGuideVC: UIViewController {
     
     @objc func experienceBtnClicked(_: UIButton){
         print("立即体验")
-        let homeVC = YHHomeVC()
+        let homeVC = HomeViewController()
         let navi = YHNaviController(rootViewController: homeVC)
         let keyWin = UIApplication.shared.keyWindow
         keyWin?.rootViewController = navi

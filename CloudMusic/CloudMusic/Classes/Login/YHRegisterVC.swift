@@ -9,8 +9,17 @@
 import UIKit
 
 import Moya
+import RxSwift
 
-class YHRegisterVC: YHBaseVC {
+class YHRegisterVC: BaseViewController {
+    
+    var avatar:String! // 暂时不支持
+    // 第三方登录后的OpenId
+    var openId: String?
+    
+//    /// 第三方登录类型
+//    var type:SSDKPlatformType?
+//
     
     // 昵称
     lazy var tfNickname : UITextField = {
@@ -87,12 +96,17 @@ class YHRegisterVC: YHBaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let _ = openId {
+            self.title = "补充资料"
+        } else {
+            self.title = "注册"
+        }
+       
         
     }
     
     override func initSubViewa() {
         super.initSubViewa()
-        
         view.addSubview(tfNickname)
         view.addSubview(tfPhone)
         view.addSubview(tfEmail)
@@ -139,23 +153,187 @@ class YHRegisterVC: YHBaseVC {
     
     @objc func registerBtnClicked(_:UIButton) {
         
-        let provider = MoyaProvider<Service>()
-        
-        provider.request(.sheets) { result in
-            switch result {
-            case let .success(response):
-                let data = response.data
-               // let code = response.statusCode
-                
-                let dataString = String(data: data, encoding: .utf8)
-                
-                print("🍺 success:\(String(describing: dataString))")
-                
-                
-            case let .failure(error):
-                print("❌ failure:\(error)")
-            }
+        // 昵称
+        let nickName = tfNickname.text!.trim()!
+        if nickName.isEmpty {
+            YHToastUtil.short("请输入昵称")
+            return
         }
+        
+        guard nickName.isStandardNickname() else{
+            YHToastUtil.short("昵称长度不对")
+            return
+        }
+        
+        // 获取手机
+        let phoneNum = tfPhone.text!.trim()!
+        
+        if phoneNum.isEmpty {
+            YHToastUtil.short("请输入手机号！")
+        }
+        
+        guard phoneNum.isStandardPhone() else {
+            YHToastUtil.short("手机号格式不正确！")
+            return
+        }
+        
+        // 获取邮箱
+        let email = tfEmail.text!.trim()!
+        
+        if email.isEmpty {
+            YHToastUtil.short("请输入邮箱！")
+        }
+        
+        guard email.isStandardEmail() else{
+            YHToastUtil.short("邮箱格式不正确！")
+            return
+        }
+        
+        // 密码
+        let password = tfPassword.text!.trim()!
+        
+        if password.isEmpty {
+            YHToastUtil.short("请输入密码！")
+            return
+        }
+        
+        guard password.isStandardPassword() else {
+            YHToastUtil.short("密码格式不正确")
+            return
+        }
+        
+        // 确认密码
+        let confirmPassword = tfConfirmPassword.text!.trim()!
+        
+        if confirmPassword.isEmpty {
+            YHToastUtil.short("请输入确认密码！")
+            return
+        }
+        
+        guard confirmPassword.isStandardPassword() else {
+            YHToastUtil.short("密码格式不正确！")
+            return
+        }
+        
+        guard password == confirmPassword else {
+            YHToastUtil.short("两次密码不一致！")
+            return
+        }
+
+//        TODO: 第三方注册
+//        var qq_id:String?
+//        var weibo_id:String?
+//
+//        if type == .typeQQ {
+//            <#code#>
+//        }
+//
+        
+                
+        Api.shared.createUser(avatar: avatar, nickname: nickName, phone: phoneNum, email: email, password: password, qq_id: "", weibo_id: "").subscribe({ data in
+            if let data = data?.data {
+                // 注册成功
+                print("🍺注册成功")
+                // 直接登录
+                
+            } else {
+                // 注册失败
+            }
+        },{ (BaseResponse, error) -> Bool in
+            
+            return false // 让父类自动处理错误
+        }).disposed(by: disposeBag)
+
+        
+       
+        
+        
+        
+        // 使用网络活动指示器插件
+//        let networkPlugin = NetworkActivityPlugin { change, target in
+//            if change == .began {
+//                print("start request")
+//                YHToastUtil.showLoading()
+//            } else {
+//                print("end request")
+//                YHToastUtil.hidenLoading()
+//
+//            }
+//        }
+        
+        // Test API by Maya
+//        let provider = MoyaProvider<Service>(plugins: [networkPlugin])
+//
+//        provider.request(.sheets) { result in
+//            switch result {
+//            case let .success(response):
+//                let data = response.data
+//               // let code = response.statusCode
+//
+//                let dataString = String(data: data, encoding: .utf8)
+//
+//                print("🍺 success:\(String(describing: dataString))")
+//
+//
+//            case let .failure(error):
+//                print("❌ failure:\(error)")
+//            }
+//        }
+//
+       
+        
+        // Test API by RXSwift
+        
+//        let provider = MoyaProvider<Service>()
+//        provider.rx.request(.sheetDetail(id: "1")).subscribe { (event) in
+//            // event 的类型是 SingleEvent<Response>
+//
+//            switch event {
+//            case let .success(response):
+//                // 请求成功
+//                let data = response.data
+//                let code = response.statusCode
+//                let dataString = String(data:data, encoding: String.Encoding.utf8)
+//                print("RegisterController request success :\(code), dataString:\(String(describing: dataString ?? nil))")
+//            case let .error(error):
+//                // 请求失败
+//                print("RegisterController request failure :\(error)")
+//            }
+//        }
+        
+//        // 扩展RxSwift 完成请求详情对象解析
+//        let provider = MoyaProvider<Service>()
+//        provider.rx
+//            .request(.sheetDetail(id: "1"))
+//            .asObservable()
+//            .mapString()
+//            .mapObject(DetailResponse<Sheet>.self)
+//            .subscribe(onNext: {data in
+//                print("OnNext:\(data?.data!.title ?? "为空")")
+//            }) { error in
+//                print("Error:\(error)")
+//            } onCompleted: {
+//                print("onCompleted")
+//            } onDisposed: {
+//                print("onDisposed")
+//            }
+    
+        // APi 封装测试
+//        Api.shared.sheets()
+//            .subscribe { data in
+//                print("OnNext:\(String(describing: data?.data?.count))")
+//            } onError: { error in
+//                print("Error:\(error)")
+//            } onCompleted: {
+//                print("onCompleted")
+//            } onDisposed: {
+//                print("onDisposed")
+//            }
+//
+//        Api.shared.sheets()
+//            .subscribe()
+            
+        
     }
     
     /*

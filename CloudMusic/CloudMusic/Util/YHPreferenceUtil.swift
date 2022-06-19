@@ -21,6 +21,37 @@ class YHPreferenceUtil {
         UserDefaults.standard.set(data, forKey: KEY_GUIDE)
     }
     
+// 用户相关
+    static func setUserId(_ data:String){
+        UserDefaults.standard.set(data, forKey: KEY_USER_ID)
+    }
+    
+    static func userId() -> String? {
+        return UserDefaults.standard.string(forKey: KEY_USER_ID)
+    }
+    
+    static func setUserToken(_ data:String){
+        UserDefaults.standard.set(data, forKey: KEY_USER_TOKEN)
+    }
+    
+    static func userToken() -> String? {
+        return UserDefaults.standard.string(forKey: KEY_USER_TOKEN)
+    }
+    
+    static func isLogin() -> Bool
+    {
+        if let _ = userId() {
+            return true
+        }
+        return false
+    }
+    
+    static func logout(){
+        UserDefaults.standard.removeObject(forKey: KEY_USER_ID)
+        UserDefaults.standard.removeObject(forKey: KEY_USER_TOKEN)
+    }
+    
+    
     
     
     

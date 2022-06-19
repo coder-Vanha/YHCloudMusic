@@ -8,13 +8,16 @@
 
 import UIKit
 
-class YHShortVideoVC: YHBaseVC {
+class YHShortVideoVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "小视频"
         // Do any additional setup after loading the view.
     }
+    
+    
+   
     
 
     /*

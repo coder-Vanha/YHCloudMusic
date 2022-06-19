@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YHLoginVC: YHBaseVC {
+class YHLoginVC: BaseViewController {
     // 用户名
     lazy var _userNameTextField : UITextField = {
         let userNameTF = UITextField()
@@ -76,6 +76,7 @@ class YHLoginVC: YHBaseVC {
     
     @objc func loginBtnClicked(_: UIButton) {
         
+    // TODO: 接口登录请求
         
         
     }

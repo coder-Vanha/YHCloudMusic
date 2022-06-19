@@ -10,13 +10,26 @@ target 'CloudMusic' do
   pod 'RxCocoa'
   pod 'MBProgressHUD'
   pod 'HandyJSON'
-  pod 'Moya', '14.0.0-alpha.1'
+  pod 'Moya/RxSwift', '14.0.0-alpha.1'
+  # pod 'Moya/RxSwift', '~> 13.0.1'
+
+  # 以下李明杰老师推荐的框架
+  # JSON解析
+  pod 'KakaJSON'
+  # 网络请求框架 
+  pod 'Alamofire'
+  # 图片下载
+  pod 'Kingfisher'
+  pod 'KingfisherWebP'
+  pod 'MJRefresh'
+  pod 'SwiftyJSON'
+
   
   #常用加密算法实现
   #aes,sha,md5
   pod 'CryptoSwift','1.0.0'
-  
-  
+
+
 
   target 'CloudMusicTests' do
     inherit! :search_paths

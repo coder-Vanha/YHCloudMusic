@@ -24,16 +24,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         _winScene = winScene
         
-       // var rootVC : UIViewController
-        if YHPreferenceUtil.isShowGuide() {
-           // rootVC = YHGuideVC()
-            gotoGuideVC()
-            
-        } else {
-//            let homeVC = YHHomeVC()
-//            rootVC = UINavigationController(rootViewController: homeVC)
-            gotoHomeVC()
-        }
+        gotoHomeVC()
+        
+//       // var rootVC : UIViewController
+//        if YHPreferenceUtil.isShowGuide() {
+//           // rootVC = YHGuideVC()
+//            gotoGuideVC()
+//
+//        } else {
+////            let homeVC = HomeViewController()
+////            rootVC = UINavigationController(rootViewController: homeVC)
+//            gotoHomeVC()
+//        }
         
 //        let win = UIWindow(windowScene: winScene)
 //        win.rootViewController = rootVC
@@ -44,9 +46,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func gotoHomeVC() {
-        let homeVC = YHHomeVC()
-        let root = UINavigationController(rootViewController: homeVC)
-        setRootVC(root)
+        setRootVC(TableBarController())
+//        let homeVC = HomeViewController()
+//        let root = UINavigationController(rootViewController: homeVC)
+//        setRootVC(root)
     }
     
     func gotoGuideVC() {
