@@ -42,6 +42,7 @@
 		65CC3F6F251E38BF0090A114 /* CloudMusicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CC3F6E251E38BF0090A114 /* CloudMusicUITests.swift */; };
 		6A73FEFA8F0573492C774050 /* Pods_CloudMusicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A369F94A6FA3D66F4E0519BA /* Pods_CloudMusicUITests.framework */; };
 		7930EA6F533C62ACD5D8AB80 /* Pods_CloudMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECD5EF83F9E8F0AB3144A297 /* Pods_CloudMusic.framework */; };
+		B844B24C286846DA00545317 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = B844B24B286846DA00545317 /* Splash.swift */; };
 		B89A2AD7285A1E06009EB278 /* YHHttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89A2AD6285A1E06009EB278 /* YHHttpUtil.swift */; };
 		B89BCE162854D44600E81B05 /* LearnSchesule.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B89BCE152854D44600E81B05 /* LearnSchesule.rtf */; };
 		B89BCE182854E8B200E81B05 /* YHToastUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89BCE172854E8B200E81B05 /* YHToastUtil.swift */; };
@@ -64,6 +65,8 @@
 		B8A2A3FD285F71CC00F3CE99 /* HomeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A2A3FC285F71CC00F3CE99 /* HomeItem.swift */; };
 		B8A2A3FF285F777400F3CE99 /* HomeComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A2A3FE285F777400F3CE99 /* HomeComment.swift */; };
 		B8A2A401285F797700F3CE99 /* HomeUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A2A400285F797700F3CE99 /* HomeUser.swift */; };
+		B8A2FD182860B85600DBC080 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A2FD172860B85600DBC080 /* SplashViewController.swift */; };
+		B8A2FD1B2860C2A600DBC080 /* BasicWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A2FD1A2860C2A600DBC080 /* BasicWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +141,7 @@
 		7DB4D93AEAB11FF755CF0833 /* Pods-CloudMusicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudMusicTests.release.xcconfig"; path = "Target Support Files/Pods-CloudMusicTests/Pods-CloudMusicTests.release.xcconfig"; sourceTree = "<group>"; };
 		7ED79CF0B699EDF8F2CD04A9 /* Pods-CloudMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudMusic.debug.xcconfig"; path = "Target Support Files/Pods-CloudMusic/Pods-CloudMusic.debug.xcconfig"; sourceTree = "<group>"; };
 		A369F94A6FA3D66F4E0519BA /* Pods_CloudMusicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudMusicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B844B24B286846DA00545317 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		B89A2AD6285A1E06009EB278 /* YHHttpUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YHHttpUtil.swift; sourceTree = "<group>"; };
 		B89BCE152854D44600E81B05 /* LearnSchesule.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = LearnSchesule.rtf; sourceTree = "<group>"; };
 		B89BCE172854E8B200E81B05 /* YHToastUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YHToastUtil.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 		B8A2A3FC285F71CC00F3CE99 /* HomeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItem.swift; sourceTree = "<group>"; };
 		B8A2A3FE285F777400F3CE99 /* HomeComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComment.swift; sourceTree = "<group>"; };
 		B8A2A400285F797700F3CE99 /* HomeUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUser.swift; sourceTree = "<group>"; };
+		B8A2FD172860B85600DBC080 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		B8A2FD1A2860C2A600DBC080 /* BasicWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicWebViewController.swift; sourceTree = "<group>"; };
 		BB1F082C7F64AA22BCEF557A /* Pods-CloudMusicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudMusicTests.debug.xcconfig"; path = "Target Support Files/Pods-CloudMusicTests/Pods-CloudMusicTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ECD5EF83F9E8F0AB3144A297 /* Pods_CloudMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -368,6 +374,10 @@
 		65B0D0822529940D00277521 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				65CC3F7C251E396F0090A114 /* Home */,
+				659FA55F2521AE4500B2EB54 /* ShortVideo */,
+				65B0D04A25271E2700277521 /* Guide */,
+				B8A2FD162860B82E00DBC080 /* Splash */,
 				65B0D0832529945000277521 /* Login */,
 			);
 			path = Classes;
@@ -408,6 +418,7 @@
 		65CC3F48251E38BA0090A114 /* CloudMusic */ = {
 			isa = PBXGroup;
 			children = (
+				B8A2FD192860C24500DBC080 /* Web */,
 				B89DDB52285624DE003659B9 /* Api */,
 				B89DDB4528560264003659B9 /* Model */,
 				654E9C43252F460B0088C2D7 /* NetWork */,
@@ -417,13 +428,10 @@
 				65B0D05125285C3300277521 /* Vendor */,
 				65B0D05025285B7900277521 /* Tools */,
 				65B0D04F2527513600277521 /* Extend */,
-				65B0D04A25271E2700277521 /* Guide */,
 				659FA5682521AFB700B2EB54 /* Base */,
 				659FA5652521AF5E00B2EB54 /* Nav */,
 				659FA5622521AE8700B2EB54 /* TabBar */,
-				659FA55F2521AE4500B2EB54 /* ShortVideo */,
 				65CC3F80251E40950090A114 /* Util */,
-				65CC3F7C251E396F0090A114 /* Home */,
 				65CC3F49251E38BA0090A114 /* AppDelegate.swift */,
 				65CC3F4B251E38BA0090A114 /* SceneDelegate.swift */,
 				65CC3F55251E38BE0090A114 /* Assets.xcassets */,
@@ -496,6 +504,23 @@
 			children = (
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		B8A2FD162860B82E00DBC080 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				B8A2FD172860B85600DBC080 /* SplashViewController.swift */,
+				B844B24B286846DA00545317 /* Splash.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		B8A2FD192860C24500DBC080 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				B8A2FD1A2860C2A600DBC080 /* BasicWebViewController.swift */,
+			);
+			path = Web;
 			sourceTree = "<group>";
 		};
 		F1F57D0594BC67E0A480B6A9 /* Frameworks */ = {
@@ -749,6 +774,7 @@
 				B8A2A3FD285F71CC00F3CE99 /* HomeItem.swift in Sources */,
 				B8A2A401285F797700F3CE99 /* HomeUser.swift in Sources */,
 				B89DDB5628562702003659B9 /* BaseResponse.swift in Sources */,
+				B8A2FD182860B85600DBC080 /* SplashViewController.swift in Sources */,
 				65B0D07F252969D100277521 /* UIColorExtension.swift in Sources */,
 				65CC3F4C251E38BA0090A114 /* SceneDelegate.swift in Sources */,
 				65454D68283A91790088ACD1 /* Service.swift in Sources */,
@@ -759,6 +785,7 @@
 				B8A2A3F3285F682A00F3CE99 /* TableBarController.swift in Sources */,
 				65B0D07125285CE300277521 /* YJBannerViewFooter.m in Sources */,
 				65B0D04C25271E4D00277521 /* YHGuideVC.swift in Sources */,
+				B844B24C286846DA00545317 /* Splash.swift in Sources */,
 				65B0D06D25285CE300277521 /* YJAnimatedDotView.m in Sources */,
 				B8A2A3F5285F686700F3CE99 /* TabBar.swift in Sources */,
 				B8A2A3F9285F701A00F3CE99 /* HomeViewController.swift in Sources */,
@@ -767,6 +794,7 @@
 				65B0D06A25285CE300277521 /* YJBannerView.m in Sources */,
 				659FA5612521AE7400B2EB54 /* YHShortVideoVC.swift in Sources */,
 				65B0D06C25285CE300277521 /* YJAbstractDotView.m in Sources */,
+				B8A2FD1B2860C2A600DBC080 /* BasicWebViewController.swift in Sources */,
 				654E9C3E252EE93E0088C2D7 /* UIButtonLayoutExtension.swift in Sources */,
 				B89DDB5A28562AA0003659B9 /* ObservableExtend.swift in Sources */,
 				B89DDB51285607B4003659B9 /* LyricType.swift in Sources */,

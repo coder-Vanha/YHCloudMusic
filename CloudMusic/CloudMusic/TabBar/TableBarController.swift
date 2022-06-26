@@ -14,8 +14,13 @@ class TableBarController: UITabBarController {
         super.viewDidLoad()
         
         setValue(TabBar(), forKeyPath: "tabBar")
-        _addChild("首页", "", "", HomeViewController.self)
-        _addChild("视频", "", "", YHShortVideoVC.self)
+        _addChild("推荐", "index_Label_find", "", HomeViewController.self)
+        _addChild("视频", "index_Label_video", "", YHShortVideoVC.self)
+        _addChild("发现", "index_Label_me", "", YHShortVideoVC.self)
+        _addChild("朋友", "index_Label_friend", "", YHShortVideoVC.self)
+        _addChild("我的", "index_Label_number", "", YHShortVideoVC.self)
+        self.tabBar.tintColor = .red
+        self.tabBar.backgroundColor = .white
     }
     
     

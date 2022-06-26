@@ -46,6 +46,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func gotoHomeVC() {
+      //  let splash = Splash.init()
+     //   splash.show();
+        
         setRootVC(TableBarController())
 //        let homeVC = HomeViewController()
 //        let root = UINavigationController(rootViewController: homeVC)

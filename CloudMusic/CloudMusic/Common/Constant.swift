@@ -86,7 +86,17 @@ let UI_TAB_BAR_HEIGHT = isiPhoneX_Series ? 83.0 : 49
 
 let UI_STATUS_BAR_HEIGHT = isiPhoneX_Series ? 44.0 : 20
 
-let UI_SAFE_AREA_HEIGHT = isiPhoneX_Series ? 34.0 : 0
+//let UI_SAFE_AREA_HEIGHT = isiPhoneX_Series ? 34.0 : 0 // 不准， 后面优化
+
+let UI_SAFE_AREA_HEIGHT = SAFE_AREA_HEIGHT()
+
+func SAFE_AREA_HEIGHT() -> CGFloat { // 这个靠谱吗？ safeAreaInsets.bottom 是否可以人为更改？？
+    if #available(iOS 11.0, *) {
+        return UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
+    } else {
+        return 0
+    }
+}
 
 
 

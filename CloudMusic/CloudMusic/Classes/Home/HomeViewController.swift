@@ -38,6 +38,10 @@ class HomeViewController: UIViewController {
         tableView.mj_header = header
         
         let footer = MJRefreshAutoNormalFooter(refreshingBlock: self.loadMoreData)
+        
+        
+        let splash = Splash.init()
+        splash.show()
 
         // Do any additional setup after loading the view.
     }
